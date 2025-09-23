@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourGCC Strategic Report - The Future of Global Capability Centers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><g fill="url(%23a)"><circle cx="200" cy="200" r="100"/><circle cx="800" cy="300" r="150"/><circle cx="300" cy="700" r="80"/></g></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .section:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .card ul {
+            color: #666;
+            line-height: 1.6;
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart {
+            height: 300px;
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+            padding: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .chart-bar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            width: 60px;
+            border-radius: 5px 5px 0 0;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .chart-bar:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .chart-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .chart-value {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 0 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -30px;
+            border-left-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -30px;
+            border-right-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translateX(-50%);
+            border: 3px solid white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Interactive Elements */
+        .toggle-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-button.active {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        .content-panel {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .content-panel.active {
+            display: block;
+        }
+
+        /* Agentic AI specific styling */
+        .agentic-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .agentic-step {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .agentic-step::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .agentic-step h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .use-case-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            border-left: 5px solid #28a745;
+        }
+
+        .problem-section {
+            background: rgba(255, 99, 132, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6384;
+        }
+
+        .solution-section {
+            background: rgba(40, 167, 69, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+            
+            .timeline-content {
+                margin-left: 50px;
+                margin-right: 0;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .agentic-flow {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1001;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">YourGCC</div>
+                <nav>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#market">Market</a></li>
+                        <li><a href="#agentic">Agentic AI</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#strategy">Strategy</a></li>
+                        <li><a href="https://drive.google.com/file/d/1HLSpTINISaSudni4_CNaI2pucyQBMWur/view?usp=sharing">Survey Paper</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>The Future of Global Capability Centers</h1>
+                <p>Transforming the GCC landscape with AI-powered operations and Tier-2 talent excellence through our revolutionary twin-engine model</p>
+                <a href="#overview" class="cta-button">Explore the Vision</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <h2>Market Evolution & Growth Trajectory</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card tooltip">
+                    <div class="stat-number">$145.92B</div>
+                    <div class="stat-label">Current Market Size (2024)</div>
+                    <span class="tooltiptext">India's GCC market valuation as of 2024</span>
+                </div>
+                <div class="stat-card tooltip">
+                    <div class="stat-number">$402.14B</div>
+                    <div class="stat-label">Projected Market Size (2032)</div>
+                    <span class="tooltiptext">Expected market growth with 13.51% CAGR</span>
+                </div>
+                <div class="stat-card tooltip">
+                    <div class="stat-number">1,700</div>
+                    <div class="stat-label">Current GCCs in India</div>
+                    <span class="tooltiptext">Employing 1.9 million professionals</span>
+                </div>
+                <div class="stat-card tooltip">
+                    <div class="stat-number">2,400</div>
+                    <div class="stat-label">Projected GCCs by 2030</div>
+                    <span class="tooltiptext">Expected to employ 2.8 million people</span>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>GCC Growth Trajectory</h3>
+                <div class="chart">
+                    <div class="chart-bar" style="height: 60px;">
+                        <div class="chart-value">$145.92B</div>
+                        <div class="chart-label">2024</div>
+                    </div>
+                    <div class="chart-bar" style="height: 80px;">
+                        <div class="chart-value">$185B</div>
+                        <div class="chart-label">2026</div>
+                    </div>
+                    <div class="chart-bar" style="height: 120px;">
+                        <div class="chart-value">$250B</div>
+                        <div class="chart-label">2028</div>
+                    </div>
+                    <div class="chart-bar" style="height: 160px;">
+                        <div class="chart-value">$330B</div>
+                        <div class="chart-label">2030</div>
+                    </div>
+                    <div class="chart-bar" style="height: 200px;">
+                        <div class="chart-value">$402.14B</div>
+                        <div class="chart-label">2032</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Dynamics Section -->
+    <section class="section" id="market">
+        <div class="container">
+            <h2>Strategic Shift: From Cost Centers to Innovation Hubs</h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Traditional Model</h3>
+                    <p>Cost arbitrage centers focused on basic support functions and back-office operations with limited strategic value.</p>
+                </div>
+                <div class="card">
+                    <h3>Modern Evolution</h3>
+                    <p>Strategic innovation hubs driving 40% of digital transformation projects and advanced R&D initiatives.</p>
+                </div>
+                <div class="card">
+                    <h3>Global Impact</h3>
+                    <p>55% of global companies cite GCCs as key enablers of business agility and faster decision-making.</p>
+                </div>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Tier-1 Cities</th>
+                            <th>Tier-2 Cities</th>
+                            <th>YourGCC Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Operational Costs</td>
+                            <td>High baseline costs</td>
+                            <td>Up to 40% savings</td>
+                            <td>Maximized ROI in Tier-2</td>
+                        </tr>
+                        <tr>
+                            <td>Talent Retention</td>
+                            <td>18-22% attrition</td>
+                            <td>Below 10% attrition</td>
+                            <td>GRP program enhances retention</td>
+                        </tr>
+                        <tr>
+                            <td>Real Estate</td>
+                            <td>Premium pricing</td>
+                            <td>50% lower costs</td>
+                            <td>Strategic location selection</td>
+                        </tr>
+                        <tr>
+                            <td>Talent Pool</td>
+                            <td>Saturated market</td>
+                            <td>Fresh, local talent</td>
+                            <td>Systematic talent development</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- GCC Pain Points Section -->
+    <section class="section">
+        <div class="container">
+            <h2>GCC Operating Model: Critical Pain Points</h2>
+            
+            <div class="chart-container">
+                <h3>Multi-Layered GCC Operations</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px;">
+                    <div style="text-align: center; padding: 25px; background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 15px;">
+                        <div style="font-size: 2.5rem; color: #667eea; margin-bottom: 10px;">⚙️</div>
+                        <h4>ITOps (IT Operations)</h4>
+                        <p>Server management, network monitoring, helpdesk services, technical infrastructure</p>
+                    </div>
+                    <div style="text-align: center; padding: 25px; background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 15px;">
+                        <div style="font-size: 2.5rem; color: #667eea; margin-bottom: 10px;">💼</div>
+                        <h4>BizOps (Business Operations)</h4>
+                        <p>Finance & accounting, HR, customer support, process automation</p>
+                    </div>
+                    <div style="text-align: center; padding: 25px; background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 15px;">
+                        <div style="font-size: 2.5rem; color: #667eea; margin-bottom: 10px;">📊</div>
+                        <h4>DataOps (Data Operations)</h4>
+                        <p>Data lifecycle management, analytics, insight generation, decision-making engine</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Challenge</th>
+                            <th>Description</th>
+                            <th>Symptoms & Early Warning Signs</th>
+                            <th>Root Cause</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Talent Attrition Crisis</strong></td>
+                            <td>High competition, rising salary expectations, workforce instability</td>
+                            <td>Sudden resignation spikes, difficulty filling positions, declining engagement</td>
+                            <td>Fragmented data, lack of predictive insights</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Operational Inefficiencies</strong></td>
+                            <td>Manual processes, fragmented technology infrastructure</td>
+                            <td>Declining SLA performance, increased escalations, excessive work hours</td>
+                            <td>Data silos, no unified operational view</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technology Integration Issues</strong></td>
+                            <td>Siloed systems, frequent outages, scalability constraints</td>
+                            <td>Integration difficulties, security vulnerabilities, escalating costs</td>
+                            <td>Lack of comprehensive data integration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Value Demonstration Gap</strong></td>
+                            <td>Inability to link GCC performance to business outcomes</td>
+                            <td>Unclear metrics, stakeholder questioning, approval difficulties</td>
+                            <td>Fragmented data preventing unified KPI measurement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business Continuity Risks</strong></td>
+                            <td>Vulnerability to disruptions, cybersecurity threats</td>
+                            <td>Ransomware attacks, APTs, downtime from regional disruptions</td>
+                            <td>Reactive approach due to data fragmentation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agentic AI Section -->
+    <section class="section" id="agentic">
+        <div class="container">
+            <h2>Agentic AI: The Next Frontier of Autonomous Operations</h2>
+            
+            <div class="chart-container">
+                <h3>Traditional AI vs Agentic AI</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <div style="padding: 25px; background: rgba(255, 99, 132, 0.1); border-radius: 15px; border-left: 4px solid #ff6384;">
+                        <h4 style="color: #ff6384; margin-bottom: 15px;">Traditional AI & Automation</h4>
+                        <ul style="color: #666; line-height: 1.6;">
+                            <li>Requires predefined rules and workflows</li>
+                            <li>Limited to specific, programmed tasks</li>
+                            <li>Cannot adapt to novel situations</li>
+                            <li>Reactive approach to problems</li>
+                            <li>Requires human intervention for decision-making</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 25px; background: rgba(40, 167, 69, 0.1); border-radius: 15px; border-left: 4px solid #28a745;">
+                        <h4 style="color: #28a745; margin-bottom: 15px;">Agentic AI</h4>
+                        <ul style="color: #666; line-height: 1.6;">
+                            <li>Autonomous reasoning and planning capabilities</li>
+                            <li>Adapts to dynamic, unpredictable environments</li>
+                            <li>Takes initiative and executes solutions independently</li>
+                            <li>Proactive problem identification and resolution</li>
+                            <li>Human-like problem-solving with minimal intervention</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agentic-flow">
+                <div class="agentic-step" data-step="PERCEIVE" style="background: rgba(255, 255, 255, 0.9); border-left: 4px solid #4a90e2;">
+                    <h4 style="color: #4a90e2;">Environmental Perception</h4>
+                    <p style="color: #555;">Continuously monitors data streams from IT systems, HR platforms, facility sensors, and business operations to identify patterns and anomalies.</p>
+                </div>
+                <div class="agentic-step" data-step="REASON" style="background: rgba(255, 255, 255, 0.9); border-left: 4px solid #8e44ad;">
+                    <h4 style="color: #8e44ad;">Intelligent Analysis</h4>
+                    <p style="color: #555;">Processes and correlates information using advanced ML models to understand context, assess impact, and determine root causes of issues.</p>
+                </div>
+                <div class="agentic-step" data-step="PLAN" style="background: rgba(255, 255, 255, 0.9); border-left: 4px solid #27ae60;">
+                    <h4 style="color: #27ae60;">Strategic Planning</h4>
+                    <p style="color: #555;">Formulates multi-step action plans considering business priorities, resource constraints, and potential consequences of interventions.</p>
+                </div>
+                <div class="agentic-step" data-step="ACT" style="background: rgba(255, 255, 255, 0.9); border-left: 4px solid #e67e22;">
+                    <h4 style="color: #e67e22;">Autonomous Execution</h4>
+                    <p style="color: #555;">Implements solutions through API integrations, automated workflows, and intelligent notifications while maintaining audit trails.</p>
+                </div>
+            </div>
+
+            <h3 style="color: white; text-align: center; margin: 40px 0;">Real-World Agentic AI Use Cases in GCCs</h3>
+
+            <div class="use-case-container">
+                <h3 style="color: #28a745; margin-bottom: 20px;">Use Case 1: Autonomous IT Incident Resolution</h3>
+                
+                <div class="problem-section">
+                    <h4 style="color: #ff6384; margin-bottom: 10px;">The Problem:</h4>
+                    <p>An on-premise server goes offline at 2:00 AM, impacting a critical application. Traditional procedure involves monitoring alerts sent to L2 support team, manual diagnosis, and troubleshooting - a process that can take hours, leading to significant downtime and SLA violations.</p>
+                </div>
+
+                <div class="solution-section">
+                    <h4 style="color: #28a745; margin-bottom: 10px;">The Agentic AI Solution:</h4>
+                    <p><strong>ESeeOps.AI Process:</strong></p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Perceive:</strong> Ingests data from IT monitoring tools, network logs, and server performance metrics</li>
+                        <li><strong>Reason:</strong> Determines the issue is a service crash, not hardware failure</li>
+                        <li><strong>Plan:</strong> Formulates three-step recovery plan: soft restart → full reboot → escalation with diagnostics</li>
+                        <li><strong>Act:</strong> Executes plan autonomously, minimizing downtime from hours to minutes</li>
+                    </ul>
+                    <div style="background: rgba(40, 167, 69, 0.2); padding: 15px; border-radius: 8px; margin-top: 15px;">
+                        <strong>Result:</strong> Automated resolution prevents manual intervention and maintains SLA compliance
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-container">
+                <h3 style="color: #28a745; margin-bottom: 20px;">Use Case 2: Predictive Attrition & Retention Actions</h3>
+                
+                <div class="problem-section">
+                    <h4 style="color: #ff6384; margin-bottom: 10px;">The Problem:</h4>
+                    <p>A high-performing team member shows declining project velocity and missed meetings. In traditional setups, this goes unnoticed until resignation submission, leading to loss of critical talent and institutional knowledge.</p>
+                </div>
+
+                <div class="solution-section">
+                    <h4 style="color: #28a745; margin-bottom: 10px;">The Agentic AI Solution:</h4>
+                    <p><strong>ESeeOps.AI Process:</strong></p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Perceive:</strong> Analyzes data from Jira/Asana (task completion), Slack/Teams (activity levels), HR surveys</li>
+                        <li><strong>Reason:</strong> Identifies burnout patterns and calculates attrition risk score</li>
+                        <li><strong>Plan:</strong> Develops intervention strategy: manager alert → workload adjustment → personalized support</li>
+                        <li><strong>Act:</strong> Triggers 1:1 scheduling, task reassignment, and supportive communications</li>
+                    </ul>
+                    <div style="background: rgba(40, 167, 69, 0.2); padding: 15px; border-radius: 8px; margin-top: 15px;">
+                        <strong>Result:</strong> Proactive retention intervention preserves valuable talent and team stability
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Platform Section -->
+    <section class="section" id="technology">
+        <div class="container">
+            <h2>ESeeOps.AI Platform: Operational Excellence Engine</h2>
+            
+            <div class="toggle-buttons">
+                <button class="toggle-button active" onclick="showPanel('core-loop')">Core Loop</button>
+                <button class="toggle-button" onclick="showPanel('data-sources')">Data Sources</button>
+                <button class="toggle-button" onclick="showPanel('solutions')">Solutions</button>
+                <button class="toggle-button" onclick="showPanel('benefits')">Benefits</button>
+                <button class="toggle-button" onclick="showPanel('partnership')">Partnership</button>
+            </div>
+
+            <div id="core-loop" class="content-panel active">
+                <div class="chart-container">
+                    <h3>ESeeOps.AI Core Intelligence Loop</h3>
+                    <div style="display: flex; justify-content: space-around; align-items: center; padding: 40px; flex-wrap: wrap;">
+                        <div style="text-align: center; margin: 20px;">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 0 auto 15px;">ASSEMBLE</div>
+                            <p><strong>Organize Data</strong><br>Unified data integration</p>
+                        </div>
+                        <div style="font-size: 2rem; color: #667eea;">→</div>
+                        <div style="text-align: center; margin: 20px;">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 0 auto 15px;">ANALYZE</div>
+                            <p><strong>Process Intelligence</strong><br>Pattern recognition & ML</p>
+                        </div>
+                        <div style="font-size: 2rem; color: #667eea;">→</div>
+                        <div style="text-align: center; margin: 20px;">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 0 auto 15px;">INSIGHT</div>
+                            <p><strong>Generate Intelligence</strong><br>Predictive analytics</p>
+                        </div>
+                        <div style="font-size: 2rem; color: #667eea;">→</div>
+                        <div style="text-align: center; margin: 20px;">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 0 auto 15px;">ACTIONS</div>
+                            <p><strong>Execute Solutions</strong><br>Autonomous operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="data-sources" class="content-panel">
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>🏢 Facility Data</h3>
+                        <p>IoT sensors, HVAC systems, energy management, space optimization, predictive maintenance through DigitalBlanket.AI partnership.</p>
+                    </div>
+                    <div class="card">
+                        <h3>💻 IT Operations Data</h3>
+                        <p>System telemetry, performance metrics, incident logs, infrastructure monitoring for comprehensive AIOps capabilities.</p>
+                    </div>
+                    <div class="card">
+                        <h3>👥 HR Data</h3>
+                        <p>Employee engagement metrics, skill development tracking, performance analytics, retention insights, and wellness indicators.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔒 Security Data</h3>
+                        <p>Threat intelligence feeds, access logs, compliance monitoring, vulnerability assessments, and risk analytics.</p>
+                    </div>
+                    <div class="card">
+                        <h3>📊 Business Data</h3>
+                        <p>Process metrics, customer interactions, financial performance indicators, and operational KPIs across all business units.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔗 Integration Layer</h3>
+                        <p>Unified data model transforming fragmented organizational information into actionable, real-time business intelligence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="solutions" class="content-panel">
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>GCC Challenge</th>
+                                <th>ESeeOps.AI Solution</th>
+                                <th>Business Impact</th>
+                                <th>Measurable Outcome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Operational Inefficiencies</strong></td>
+                                <td>Predictive maintenance & energy optimization</td>
+                                <td>Proactive facility management</td>
+                                <td>40% improvement in asset uptime</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Talent Attrition Crisis</strong></td>
+                                <td>Employee experience analytics & early warning systems</td>
+                                <td>Predictive retention strategies</td>
+                                <td>Enhanced retention & engagement scores</td>
+                            </tr>
+                            <tr>
+                                <td><strong>System Downtime</strong></td>
+                                <td>AIOps predictive analytics & autonomous resolution</td>
+                                <td>Proactive incident prevention</td>
+                                <td>99.9% system availability</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance Measurement Gap</strong></td>
+                                <td>Unified dashboard & real-time KPI tracking</td>
+                                <td>Data-driven decision making</td>
+                                <td>25% faster decision making</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Fragmentation</strong></td>
+                                <td>Integrated data governance & unified analytics</td>
+                                <td>Complete operational visibility</td>
+                                <td>Single source of truth established</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="benefits" class="content-panel">
+                <div class="stats-grid">
+                    <div class="stat-card tooltip">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">Asset Uptime Improvement</div>
+                        <span class="tooltiptext">Through predictive maintenance and optimization</span>
+                    </div>
+                    <div class="stat-card tooltip">
+                        <div class="stat-number">25%</div>
+                        <div class="stat-label">Faster Decision Making</div>
+                        <span class="tooltiptext">Via unified dashboards and real-time analytics</span>
+                    </div>
+                    <div class="stat-card tooltip">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-label">Energy Cost Reduction</div>
+                        <span class="tooltiptext">Smart building optimization and management</span>
+                    </div>
+                    <div class="stat-card tooltip">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">System Availability</div>
+                        <span class="tooltiptext">Through proactive monitoring and resolution</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="partnership" class="content-panel">
+                <div class="chart-container">
+                    <h3>DigitalBlanket.AI Strategic Partnership</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: start;">
+                        <div>
+                            <h4 style="color: #667eea; margin-bottom: 15px;">Platform Foundation</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li>White-labeled IoT & AI-powered SaaS platform</li>
+                                <li>Proven facility management capabilities</li>
+                                <li>Energy savings and predictive maintenance</li>
+                                <li>Space optimization and employee experience</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #667eea; margin-bottom: 15px;">Strategic Assessment</h4>
+                            <div style="background: rgba(255, 193, 7, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #ffc107;">
+                                <p><strong>Due Diligence Finding:</strong> Mixed market data suggests company restructuring or rebranding from Flamenco Tech to Digital Blanket. Active website, recent testimonials, and job postings indicate operational continuity.</p>
+                                <p style="margin-top: 15px;"><strong>Risk Mitigation:</strong> White-labeling strategy ensures YourGCC maintains customer relationships and branding control while leveraging proven technology foundation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Advantage Section -->
+    <section class="section" id="strategy">
+        <div class="container">
+            <h2>YourGCC Twin-Engine Strategic Model</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>🎓 GCC Ready Professionals (GRP) Program</h3>
+                        <p>Systematic talent pipeline development through strategic partnerships with Guidance Tamil Nadu and TNSDC. MoUs with colleges in Coimbatore, Trichy, and Madurai create industry-ready workforce with specialized GCC skills.</p>
+                        <ul style="margin-top: 15px; padding-left: 20px;">
+                            <li>Direct partnerships with local educational institutions</li>
+                            <li>Customized curriculum for GCC operations</li>
+                            <li>Higher talent retention in Tier-2 cities (&lt;10% attrition vs 18-22% in Tier-1)</li>
+                            <li>Cost-effective talent acquisition and development strategy</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>🤖 ESeeOps.AI Operational Platform</h3>
+                        <p>Meta-AI platform providing comprehensive operational backbone for high availability, performance, and experience optimization. Transforms fragmented data into actionable intelligence through agentic AI capabilities.</p>
+                        <ul style="margin-top: 15px; padding-left: 20px;">
+                            <li>Unified data integration across all operational layers (ITOps, BizOps, DataOps)</li>
+                            <li>Predictive maintenance, energy optimization, and facility management</li>
+                            <li>Autonomous AIOps for proactive incident management and resolution</li>
+                            <li>Real-time performance dashboards and strategic analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>🔄 Synergistic Value Creation</h3>
+                        <p>The convergence of talent development and operational excellence creates a virtuous cycle. GCC-ready workforce operates within AI-optimized environment, leading to enhanced retention, productivity, and strategic value delivery.</p>
+                        <ul style="margin-top: 15px; padding-left: 20px;">
+                            <li>Plug-and-play GCC ecosystem deployment with immediate productivity</li>
+                            <li>Superior alternative to traditional outsourcing and BOT models</li>
+                            <li>Reduced time-to-market: 6-9 months vs traditional 18-24 months</li>
+                            <li>Strategic control with operational efficiency and risk mitigation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Competitive Positioning Analysis</h3>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Strategic Control</th>
+                                <th>Initial Investment</th>
+                                <th>Time to Market</th>
+                                <th>Long-term Value</th>
+                                <th>Risk Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Traditional Outsourcing</strong></td>
+                                <td>❌ Limited</td>
+                                <td>✅ Low</td>
+                                <td>✅ Fast</td>
+                                <td>❌ Limited</td>
+                                <td>⚠️ Medium</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Build-Operate-Transfer (BOT)</strong></td>
+                                <td>✅ High</td>
+                                <td>⚠️ Medium</td>
+                                <td>⚠️ Medium</td>
+                                <td>✅ High</td>
+                                <td>⚠️ Medium</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ground-up GCC Build</strong></td>
+                                <td>✅ Full</td>
+                                <td>❌ Very High</td>
+                                <td>❌ Slow</td>
+                                <td>✅ Very High</td>
+                                <td>❌ High</td>
+                            </tr>
+                            <tr style="background: rgba(102, 126, 234, 0.1); font-weight: bold;">
+                                <td><strong>YourGCC Twin-Engine</strong></td>
+                                <td>✅ Full</td>
+                                <td>✅ Optimized</td>
+                                <td>✅ Fast</td>
+                                <td>✅ Very High</td>
+                                <td>✅ Low</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tamil Nadu Ecosystem Section -->
+    <section class="section">
+        <div class="container">
+            <h2>Tamil Nadu: The Strategic Hub-and-Spoke Model</h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>🏛️ Government Support</h3>
+                    <p><strong>GCC One Initiative:</strong> Single-window clearance system streamlining approvals and removing bureaucratic bottlenecks for rapid GCC establishment and operational efficiency.</p>
+                </div>
+                <div class="card">
+                    <h3>💰 Policy Incentives</h3>
+                    <p><strong>GCC Policy 2024-2027:</strong> Comprehensive support including payroll subsidies, infrastructure development, tax exemptions, and dedicated investment facilitation services.</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 Hub-and-Spoke Vision</h3>
+                    <p><strong>Chennai as Hub:</strong> Tier-2 cities like Coimbatore, Madurai, and Tiruchirappalli positioned as strategic spokes with specialized capabilities and cost advantages.</p>
+                </div>
+                <div class="card">
+                    <h3>🏫 Educational Partnerships</h3>
+                    <p><strong>TNSDC Collaboration:</strong> Proven track record with industry leaders like TCS, successfully creating training programs and employment opportunities for millions of students.</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Tier-2 City Strategic Advantages</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px;">
+                    <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 15px;">
+                        <div style="font-size: 2.5rem; color: #667eea; margin-bottom: 10px;">🏢</div>
+                        <h4>Coimbatore</h4>
+                        <p>Strong manufacturing base, established IT ecosystem, multiple technical institutions, ideal for mid-sized GCCs</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 15px;">
+                        <div style="font-size: 2.5rem; color: #667eea; margin-bottom: 10px;">🎓</div>
+                        <h4>Madurai</h4>
+                        <p>Educational hub with cultural significance, growing technology sector, strong academic partnerships</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 15px;">
+                        <div style="font-size: 2.5rem; color: #667eea; margin-bottom: 10px;">⚙️</div>
+                        <h4>Tiruchirappalli (Trichy)</h4>
+                        <p>Engineering excellence reputation, strategic central location, emerging technology destination</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Forces Section -->
+    <section class="section">
+        <div class="container">
+            <h2>Global Policy Tailwinds: The H-1B Catalyst Effect</h2>
+            
+                        <div class="chart-container">
+    <h3>Policy Impact Analysis: Strategic Response to H-1B Fee Changes</h3>
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: center;">
+        <div>
+            <div style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 25px; margin-bottom: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-left: 5px solid #ff6b6b;">
+                <div style="font-size: 2.5rem; font-weight: bold; color: #ff6b6b; margin-bottom: 10px;">$100K</div>
+                <div style="color: #555; font-weight: 500;">Proposed H-1B Fee</div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-left: 5px solid #4ecdc4;">
+                <div style="font-size: 2.5rem; font-weight: bold; color: #4ecdc4; margin-bottom: 10px;">$500M</div>
+                <div style="color: #555; font-weight: 500;">Additional Annual Cost for US Tech</div>
+            </div>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+            <h4 style="margin-bottom: 20px; color: #333; text-align: center;">Strategic Response Pathway</h4>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div style="padding: 18px; background: linear-gradient(135deg, #ff6b6b15, #ff6b6b05); border-left: 4px solid #ff6b6b; border-radius: 10px; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.1);">
+                    <strong style="color: #333;">Challenge:</strong> <span style="color: #555;">Prohibitive visa costs making US hiring financially unfeasible</span>
+                </div>
+                <div style="padding: 18px; background: linear-gradient(135deg, #feca5715, #feca5705); border-left: 4px solid #feca57; border-radius: 10px; box-shadow: 0 5px 15px rgba(254, 202, 87, 0.1);">
+                    <strong style="color: #333;">Decision Point:</strong> <span style="color: #555;">Choose between expensive local talent vs. accelerated offshore operations</span>
+                </div>
+                <div style="padding: 18px; background: linear-gradient(135deg, #48cae415, #48cae405); border-left: 4px solid #48cae4; border-radius: 10px; box-shadow: 0 5px 15px rgba(72, 202, 228, 0.1);">
+                    <strong style="color: #333;">Optimal Solution:</strong> <span style="color: #555;">Rapid GCC expansion in India's cost-effective, skilled ecosystem</span>
+                </div>
+                <div style="padding: 18px; background: linear-gradient(135deg, #667eea15, #667eea05); border-left: 4px solid #667eea; border-radius: 10px; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);">
+                    <strong style="color: #333;">YourGCC Opportunity:</strong> <span style="color: #555;">Enable rapid, efficient, and strategic GCC deployment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>📈 Market Acceleration Impact</h3>
+                    <p>Policy changes will accelerate GCC adoption as companies seek strategic alternatives to expensive H-1B visa processes, reinforcing India's position as the global enterprise operations hub.</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 Strategic Market Positioning</h3>
+                    <p>YourGCC's twin-engine model is perfectly positioned to capitalize on this policy-driven demand surge for efficient, comprehensive GCC solutions and rapid market deployment.</p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Global Competitive Advantage</h3>
+                    <p>India reinforced as preeminent hub for enterprise operations, with Tier-2 cities becoming increasingly attractive due to cost efficiency and operational excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI and Value Proposition -->
+    <section class="section">
+        <div class="container">
+            <h2>Value Proposition & ROI Analysis</h2>
+            
+            <div class="chart-container">
+                <h3>Cost-Benefit Analysis: 3-Year Investment Comparison</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div style="background: linear-gradient(135deg, #28a745, #20c997); color: white; padding: 30px; border-radius: 15px; text-align: center;">
+                        <h4>Traditional GCC Setup</h4>
+                        <div style="font-size: 2rem; margin: 20px 0;">$12M</div>
+                        <ul style="text-align: left; list-style: none; padding: 0;">
+                            <li>• Infrastructure Development: $5M</li>
+                            <li>• Talent Acquisition & Training: $4M</li>
+                            <li>• Operations & Technology Setup: $2M</li>
+                            <li>• Compliance & Legal: $1M</li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 15px; text-align: center;">
+                        <h4>YourGCC Twin-Engine Model</h4>
+                        <div style="font-size: 2rem; margin: 20px 0;">$7M</div>
+                        <ul style="text-align: left; list-style: none; padding: 0;">
+                            <li>• GRP Talent Program: $2M</li>
+                            <li>• ESeeOps.AI Platform: $2M</li>
+                            <li>• Infrastructure Optimization: $2M</li>
+                            <li>• Operations Launch: $1M</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(40, 167, 69, 0.1); border-radius: 15px;">
+                    <h4 style="color: #28a745;">Total Investment Savings: $5M (42% cost reduction)</h4>
+                    <p>Plus accelerated time-to-market and significantly reduced operational risk factors</p>
+                </div>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Value Driver</th>
+                            <th>Traditional Approach</th>
+                            <th>YourGCC Model</th>
+                            <th>Strategic Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Time to Productivity</strong></td>
+                            <td>18-24 months</td>
+                            <td>6-9 months</td>
+                            <td>65% faster deployment and revenue generation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Talent Readiness</strong></td>
+                            <td>6+ months training period</td>
+                            <td>GCC-ready from day 1</td>
+                            <td>Immediate productivity and value creation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Operational Efficiency</strong></td>
+                            <td>Manual processes, reactive management</td>
+                            <td>AI-driven automation, predictive operations</td>
+                            <td>40% efficiency gain through automation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Risk Management</strong></td>
+                            <td>High setup and execution risk</td>
+                            <td>Proven platform and pre-trained talent</td>
+                            <td>Minimized execution risk and failure probability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scalability</strong></td>
+                            <td>Limited by infrastructure constraints</td>
+                            <td>Cloud-native, AI-powered scaling</td>
+                            <td>Seamless expansion across multiple locations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Roadmap -->
+    <section class="section">
+        <div class="container">
+            <h2>Strategic Implementation Roadmap</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Phase 1: Foundation Building (Months 1-6)</h3>
+                        <ul style="margin-top: 15px; padding-left: 20px;">
+                            <li><strong>Partnership Establishment:</strong> Formalize GRP partnerships with Tamil Nadu institutions and TNSDC</li>
+                            <li><strong>Platform Deployment:</strong> Deploy ESeeOps.AI infrastructure and integrate DigitalBlanket.AI capabilities</li>
+                            <li><strong>Pilot Launch:</strong> Establish first pilot GCC in Coimbatore with initial client engagement</li>
+                            <li><strong>Talent Pipeline:</strong> Begin systematic talent development and GCC-ready curriculum implementation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Phase 2: Strategic Scaling (Months 7-18)</h3>
+                        <ul style="margin-top: 15px; padding-left: 20px;">
+                            <li><strong>Geographic Expansion:</strong> Extend operations to Madurai and Tiruchirappalli hubs</li>
+                            <li><strong>Talent Scaling:</strong> Scale GRP program to 1000+ certified professionals across locations</li>
+                            <li><strong>Platform Enhancement:</strong> Advanced AI capabilities, predictive analytics, and autonomous operations</li>
+                            <li><strong>Client Growth:</strong> Establish 5+ enterprise GCCs across Tier-2 city network</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Phase 3: Market Leadership (Months 19-36)</h3>
+                        <ul style="margin-top: 15px; padding-left: 20px;">
+                            <li><strong>Operational Excellence:</strong> Achieve benchmark standards for availability, performance, and retention</li>
+                            <li><strong>Regional Expansion:</strong> Extend model to other Tier-2 cities across South India</li>
+                            <li><strong>Industry Specialization:</strong> Develop vertical-specific GCC solutions for key industries</li>
+                            <li><strong>Market Leadership:</strong> Establish YourGCC as the definitive leader in GCC ecosystem enablement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion & Call to Action -->
+    <section class="section">
+        <div class="container">
+            <h2>Strategic Conclusion & Market Position</h2>
+            
+            <div class="chart-container">
+                <div style="text-align: center; padding: 40px;">
+                    <h3 style="color: #333; margin-bottom: 30px;">The YourGCC Correlated Strategic Advantage</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                        <div style="background: linear-gradient(135deg, #667eea20, #764ba220); padding: 25px; border-radius: 15px;">
+                            <h4 style="color: #667eea; margin-bottom: 15px;">Perfect Market Alignment</h4>
+                            <p>Strategically positioned for GCC decentralization trend, policy-driven acceleration, and Tier-2 city emergence as operational hubs</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #667eea20, #764ba220); padding: 25px; border-radius: 15px;">
+                            <h4 style="color: #667eea; margin-bottom: 15px;">Comprehensive Problem-Solution Fit</h4>
+                            <p>Twin-engine model directly addresses critical talent supply gaps and operational efficiency challenges with integrated approach</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #667eea20, #764ba220); padding: 25px; border-radius: 15px;">
+                            <h4 style="color: #667eea; margin-bottom: 15px;">Unique Competitive Advantage</h4>
+                            <p>Holistic end-to-end solution superior to traditional outsourcing, BOT models, or ground-up GCC development approaches</p>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(40, 167, 69, 0.1); padding: 30px; border-radius: 20px; margin: 30px 0;">
+                        <h3 style="color: #28a745; margin-bottom: 20px;">Market Opportunity Summary</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; color: #28a745; font-weight: bold;">$402B</div>
+                                <p>Projected Market Size by 2032</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; color: #28a745; font-weight: bold;">13.51%</div>
+                                <p>Annual Growth Rate (CAGR)</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; color: #28a745; font-weight: bold;">700+</div>
+                                <p>New GCCs by 2030</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 40px; border-radius: 20px; margin-top: 30px;">
+                        <h3 style="margin-bottom: 20px;">Transform Your Global Operations Strategy</h3>
+                        <p style="font-size: 1.2rem; margin-bottom: 30px;">Partner with YourGCC to build the next-generation Global Capability Centers with our proven twin-engine model combining AI-powered operations and Tier-2 talent excellence</p>
+                        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                            <button onclick="window.open('mailto:contact@yourgcc.com?subject=Strategic Partnership Inquiry')" style="background: white; color: #667eea; padding: 15px 30px; border: none; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Contact Strategic Team</button>
+                            <button onclick="alert('Comprehensive demo scheduled - our executive team will reach out within 24 hours to discuss your GCC strategy!')" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border: 2px solid white; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Schedule Executive Demo</button>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 40px; padding: 30px; background: rgba(255, 255, 255, 0.95); border-radius: 15px;">
+                        <h4 style="color: #333; margin-bottom: 20px;">Key Strategic Differentiators</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align: left;">
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Integrated Talent & Technology</h5>
+                                <p style="color: #666;">Only solution combining systematic talent development with comprehensive AI-powered operational platform</p>
+                            </div>
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Proven Partnership Ecosystem</h5>
+                                <p style="color: #666;">Strategic alliances with Tamil Nadu government, TNSDC, and leading educational institutions</p>
+                            </div>
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Tier-2 City Strategic Focus</h5>
+                                <p style="color: #666;">First-mover advantage in high-growth, cost-effective Tier-2 markets with government support</p>
+                            </div>
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Agentic AI Operations</h5>
+                                <p style="color: #666;">Next-generation autonomous operations with predictive analytics and intelligent automation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>YourGCC</h3>
+                    <p>Enabling the future of Global Capability Centers through innovative twin-engine model combining talent excellence and AI-powered operational platforms.</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Transforming the GCC ecosystem with strategic focus on Tier-2 cities and agentic AI operations.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <a href="#technology">ESeeOps.AI Platform</a><br>
+                    <a href="#strategy">GRP Talent Program</a><br>
+                    <a href="#market">Tier-2 City Strategy</a><br>
+                    <a href="#agentic">Agentic AI Operations</a><br>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="#">Strategic Report</a><br>
+                    <a href="#">Implementation Guide</a><br>
+                    <a href="#">ROI Calculator</a><br>
+                    <a href="#">Industry Insights</a><br>
+                </div>
+                <div class="footer-section">
+                    <h3>Strategic Locations</h3>
+                    <p><strong>Chennai Hub:</strong> Strategic headquarters and coordination center</p>
+                    <p><strong>Tier-2 Spokes:</strong></p>
+                    <p>• Coimbatore - Manufacturing & IT</p>
+                    <p>• Madurai - Educational excellence</p>
+                    <p>• Tiruchirappalli - Engineering hub</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; text-align: center;">
+                <p>&copy; 2025 YourGCC. All rights reserved. | Building the Future of Global Capability Centers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Panel switching function
+        function showPanel(panelId) {
+            // Hide all panels
+            document.querySelectorAll('.content-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.toggle-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected panel
+            const targetPanel = document.getElementById(panelId);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Animate chart bars on scroll
+        function animateCharts() {
+            const chartBars = document.querySelectorAll('.chart-bar');
+            chartBars.forEach((bar, index) => {
+                const barTop = bar.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (barTop < windowHeight - 100) {
+                    setTimeout(() => {
+                        bar.style.transform = 'scaleY(1)';
+                        bar.style.transformOrigin = 'bottom';
+                    }, index * 200);
+                }
+            });
+        }
+
+        // Animate cards on scroll
+        function animateCards() {
+            const cards = document.querySelectorAll('.card, .stat-card');
+            cards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 50) {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }
+
+        // Initialize card animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card, .stat-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+            });
+        });
+
+        // Scroll event listener
+        window.addEventListener('scroll', function() {
+            animateCharts();
+            animateCards();
+        });
+
+        // Interactive hover effects for stats
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.animation = 'pulse 1s infinite';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.animation = 'none';
+            });
+        });
+
+        // Add scroll progress indicator
+        function updateScrollProgress() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight * 100;
+            
+            let progressBar = document.querySelector('.scroll-progress');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.className = 'scroll-progress';
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 3px;
+                    background: linear-gradient(135deg, #667eea, #764ba2);
+                    z-index: 10000;
+                    transition: width 0.1s ease;
+                `;
+                document.body.appendChild(progressBar);
+            }
+            
+            progressBar.style.width = scrollPercent + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+
+        // Enhanced interactivity for timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const dot = this.querySelector('.timeline-dot');
+                if (dot) {
+                    dot.style.transform = 'translateX(-50%) scale(1.5)';
+                    dot.style.boxShadow = '0 0 30px rgba(102, 126, 234, 0.6)';
+                }
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const dot = this.querySelector('.timeline-dot');
+                if (dot) {
+                    dot.style.transform = 'translateX(-50%) scale(1)';
+                    dot.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.2)';
+                }
+            });
+        });
+
+        // Add floating action button
+        const fab = document.createElement('div');
+        fab.innerHTML = '↑';
+        fab.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        `;
+
+        fab.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.body.appendChild(fab);
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                fab.style.opacity = '1';
+                fab.style.transform = 'scale(1)';
+            } else {
+                fab.style.opacity = '0';
+                fab.style.transform = 'scale(0.8)';
+            }
+        });
+
+        // Add interactive chart functionality
+        function createInteractiveChart() {
+            const chartBars = document.querySelectorAll('.chart-bar');
+            
+            chartBars.forEach(bar => {
+                bar.addEventListener('click', function() {
+                    const popup = document.createElement('div');
+                    const value = this.querySelector('.chart-value').textContent;
+                    const label = this.querySelector('.chart-label').textContent;
+                    
+                    popup.innerHTML = `
+                        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                             background: white; padding: 30px; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                             z-index: 10001; max-width: 400px; text-align: center;">
+                            <h3 style="color: #667eea; margin-bottom: 15px;">GCC Market Projection ${label}</h3>
+                            <div style="font-size: 2.5rem; font-weight: bold; color: #333; margin: 20px 0;">${value}</div>
+                            <p style="color: #666; margin-bottom: 25px;">
+                                ${label === '2024' ? 'Current market baseline with established infrastructure and growing strategic focus' :
+                                  label === '2026' ? 'Early acceleration phase driven by policy changes and Tier-2 expansion' :
+                                  label === '2028' ? 'Rapid growth with widespread adoption of AI-powered operations' :
+                                  label === '2030' ? 'Peak expansion with optimized Tier-2 ecosystem and talent pipeline' :
+                                  'Mature market with comprehensive AI integration and operational excellence'}
+                            </p>
+                            <button onclick="this.parentElement.parentElement.remove()" 
+                                    style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; 
+                                           border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer;">
+                                Close
+                            </button>
+                        </div>
+                        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                             background: rgba(0,0,0,0.5); z-index: 10000;"
+                             onclick="this.parentElement.remove()"></div>
+                    `;
+                    
+                    document.body.appendChild(popup);
+                });
+            });
+        }
+
+        // Initialize all interactive features
+        setTimeout(() => {
+            createInteractiveChart();
+            
+            // Enhanced tooltip functionality
+            document.querySelectorAll('.tooltip').forEach(tooltip => {
+                tooltip.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                tooltip.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Add animation to agentic flow steps
+            document.querySelectorAll('.agentic-step').forEach((step, index) => {
+                step.style.animation = `slideInUp 0.6s ease-out ${index * 0.2}s both`;
+            });
+
+        }, 3000);
+
+        // Performance monitoring
+        function trackUserEngagement() {
+            let scrollDepth = 0;
+            let timeOnPage = Date.now();
+            let interactions = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100;
+                scrollDepth = Math.max(scrollDepth, currentScroll);
+            });
+
+            document.addEventListener('click', () => {
+                interactions++;
+            });
+
+            window.addEventListener('beforeunload', () => {
+                const sessionData = {
+                    timeSpent: Date.now() - timeOnPage,
+                    scrollDepth: Math.round(scrollDepth),
+                    interactions: interactions,
+                    timestamp: new Date().toISOString()
+                };
+                console.log('User Engagement Analytics:', sessionData);
+            });
+        }
+
+        // Initialize tracking and final optimizations
+        trackUserEngagement();
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    window.scrollBy(0, 300);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    window.scrollBy(0, -300);
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    window.scrollTo(0, 0);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    window.scrollTo(0, document.body.scrollHeight);
+                    break;
+            }
+        });
+
+        // Final initialization message
+        setTimeout(() => {
+            console.log('🚀 YourGCC Strategic Dashboard fully loaded with comprehensive agentic AI details!');
+        }, 1000);
+
+    </script>
+</body>
+</html>
